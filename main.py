@@ -561,7 +561,11 @@ def perform_network_scan(scan_id, escl_url, filepath):
 
 
 if __name__ == '__main__':
-    print("🚀 Starting Web Scanner Application...")
-    print("📡 Auto-detecting scanners in background...")
-    print("🌐 Web interface will be available at http://localhost:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    import os
+    port = int(os.getenv("PORT", 5000))
+    if os.getenv("RENDER"):
+        print("Running on Render")
+        from gunicorn.app.wsgiapp import run
+        run()
+    else:
+        app.run(debug=False, host='0.0.0.0', port=port)
