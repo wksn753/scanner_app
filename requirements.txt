@@ -1,0 +1,5 @@
+pillow
+requests
+python-sane; platform_system!="Windows"
+twain; platform_system=="Windows"
+pywin32; platform_system=="Windows"
