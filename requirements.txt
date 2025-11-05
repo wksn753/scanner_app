@@ -1,6 +1,6 @@
 Flask==3.0.3
 pillow
 requests
-python-sane; platform_system != "Windows"
+python-sane ; platform_system == "Linux"
 twain; platform_system == "Windows"
 pywin32; platform_system == "Windows"

@@ -7,8 +7,10 @@ class ScannerManager:
     def __init__(self):
         self.os = platform.system().lower()
         self.is_render = os.getenv("RENDER") == "true"
+        self.is_render = os.getenv("RENDER") == "true"
 
         if self.is_render:
+        self.is_render = os.getenv("RENDER") == "true"
             print("Running on Render → using pure eSCL")
             self.backend = "escl"
         elif self.os in ["linux", "darwin"]:
